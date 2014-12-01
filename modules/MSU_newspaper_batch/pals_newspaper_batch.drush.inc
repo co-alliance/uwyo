@@ -102,7 +102,7 @@ function drush_pals_newspaper_batch_preprocess() {
     $parameters['content_models'] = array('islandora:newspaperIssueCModel');
   }
 
-  $preprocessor = new palsNewspaperBatchPreprocessor($connection, $parameters);
+  $preprocessor = new PALSNewspaperBatchPreprocessor($connection, $parameters);
 
   // Pass the preprocessor off to run.
   $preprocessed = islandora_batch_handle_preprocessor($preprocessor);
