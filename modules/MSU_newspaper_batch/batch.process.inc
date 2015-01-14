@@ -5,9 +5,9 @@
  * Classes and functions related to the islandora_batch framework.
  */
 
-require_once '/var/www/drupal/sites/all/modules/islandora/islandora.module';
-require_once '/var/www/drupal/sites/all/modules/islandora_solution_pack_newspaper/includes/utilities.inc';
-require_once '/var/www/drupal/sites/all/modules/islandora_book_batch/includes/islandora_book_batch.inc';
+require_once '/var/www/drupal7/sites/all/modules/islandora/islandora.module';
+require_once '/var/www/drupal7/sites/all/modules/islandora_solution_pack_newspaper/includes/utilities.inc';
+require_once '/var/www/drupal7/sites/all/modules/islandora_book_batch/includes/islandora_book_batch.inc';
 // require_once '/var/www/drupal/sites/all/modules/islandora/includes/dublin_core.inc';
 
 
