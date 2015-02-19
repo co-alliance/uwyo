@@ -766,17 +766,6 @@
 			</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
-
-	<xsl:template match="mods:titleInfo[@type='cover']">
-		<xsl:call-template name="datafield">
-			<xsl:with-param name="tag">246</xsl:with-param>		
-			<xsl:with-param name="ind1">1</xsl:with-param>
-			<xsl:with-param name="ind2">4</xsl:with-param>		
-			<xsl:with-param name="subfields">		
-				<xsl:call-template name="titleInfo"/>
-			</xsl:with-param>
-		</xsl:call-template>
-	</xsl:template>
 	
 	<xsl:template match="mods:titleInfo[@type='uniform'][1]">
 		<xsl:choose>
