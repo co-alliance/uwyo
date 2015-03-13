@@ -1,0 +1,9 @@
+name = Islandora Paged Content PDF Batch
+description = "Batch ingest a ZIP of one or more PDFs into paged content and individual page objects"
+package = Islandora
+version = 7.x-dev
+core = 7.x
+dependencies[] = islandora_batch
+dependencies[] = islandora_paged_content
+files[] = includes/batch.inc
+php = 5.3

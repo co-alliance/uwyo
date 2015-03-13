@@ -1,0 +1,64 @@
+<?php
+/**
+ * @file
+ * Empty shell of a module.
+ */
+
+/**
+ * Implements hook_form_FORMID_alter().
+ */
+function islandora_paged_content_pdf_batch_form_islandora_paged_content_upload_pdf_form_alter($form, &$form_state) {
+  // Display a warning message to users who could be ingesting a large PDF
+  // through the ingest steps.
+  if (isset($form_state['islandora']['shared_storage'])) {
+    module_load_include('inc', 'islandora', 'includes/ingest.form');
+    $shared_storage = islandora_ingest_form_get_shared_storage($form_state);
+    drupal_set_message(t('Please note that large PDFs may take a long time to process. Consider using the batch ingester located in the <a href="@url">manage collection</a> interface.', array('@url' => url("islandora/object/{$shared_storage['parent']}/manage"))), 'warning');
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function islandora_paged_content_pdf_batch_menu() {
+  $items = array();
+  $items['islandora/object/%islandora_object/manage/paged_content_pdf_batch'] = array(
+    'title' => 'PDF Batch',
+    'access callback' => 'islandora_paged_content_pdf_batch_menu_access',
+    'access arguments' => array(2),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('islandora_paged_content_pdf_batch_batch_form', 2),
+    'file' => 'includes/form.inc',
+    'type' => MENU_LOCAL_ACTION,
+    'weight' => 20,
+  );
+  return $items;
+}
+
+/**
+ * Access callback for the UI upload.
+ */
+function islandora_paged_content_pdf_batch_menu_access(AbstractObject $object) {
+  if (!islandora_object_access(ISLANDORA_INGEST, $object)) {
+    return FALSE;
+  }
+  $c = 'COLLECTION_POLICY';
+  if (isset($object[$c]) && islandora_datastream_access(ISLANDORA_VIEW_OBJECTS, $object[$c])) {
+    $cp = new CollectionPolicy($object[$c]->content);
+    module_load_include('inc', 'islandora_paged_content', 'includes/utilities');
+    $applicable_paged_cmodels = islandora_paged_content_retrieve_applicable_cmodels();
+    return array_intersect_key($applicable_paged_cmodels, $cp->getContentModels());
+  }
+  // Handle the case where we are on a child that isn't a collection.
+  else {
+    module_load_include('inc', 'islandora_paged_content', 'includes/utilities');
+    $applicable_paged_cmodels = islandora_paged_content_retrieve_applicable_cmodels();
+    $parents = array();
+    foreach ($applicable_paged_cmodels as $values) {
+      if (isset($values['parents'])) {
+        $parents = array_merge($parents, array_keys($values['parents']));
+      }
+    }
+    return array_intersect($parents, $object->models);
+  }
+}
