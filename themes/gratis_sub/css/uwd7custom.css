@@ -1,0 +1,27 @@
+/* external css file Gratis sub-theme for UWYO Drupal 7 install Islandora
+----this is the custom file you should be using to fine tune the theme */
+body {background-color:#FFF}p{font-size:106%}
+.img_right {float:right;margin:.6em 0 .8em .8em}.img_left {float:left;margin:.6em .8em .8em 0}
+.color-palette-turquoise form button {background-color:#02B4CE}
+a.button {background-color: #02B4CE;color: #FFF;letter-spacing: 1px;padding: 0.5em 1em;text-align: center;margin: .7em}
+a.hover.button {background-color:#62B2CE}
+#main-menu ul li a.active, #main-menu ul li a:hover, #main-menu ul li.hover-state a, #main-menu ul li.active-trail a {background-color:#02B4CE}
+td a, td {font-size:1.1em}
+input.form-submit {background-color:#02B4CE}
+#preface-wrapper {}
+.main-navigation{font-size:110%}
+.solr-fields {font-weight:bold}
+dl.solr-fields dt.solr-label {text-align:right}
+#BRtoolbar, div#BRnav {border:1px solid #DDD;background-color:#EEE}
+#BRpage {background-color:#EEE}
+#BRtoolbarbuttons button.BRicon {min-width:40px}
+#BRpage button.BRicon {min-width:40px}
+#BRtoolbarbuttons #booksearch input#textSrch {margin-top:-4px}
+a#clip {float:right;background-color:#62B2CE;color:#FFF;letter-spacing:1px;padding:0.5em 1em;text-align:center;margin:1.5em 0;display:block;width:7em}
+a#clip:hover {background-color:#5499B1;color:#FFF}
+a.islandora-pdf-link {float:right;background-color:#62B2CE;color:#FFF;letter-spacing:1px;padding:0.5em 1em;text-align:center;margin:1.5em 0;display:block;width:7em}
+a.islandora-pdf-link:hover {background-color:#5499B1;color:#FFF}
+*islandora-compound-prev-next .islandora-compound-title a {background-color:#62B2CE;color:#FFF;letter-spacing:1px;padding:0.5em 1em;text-align:center;margin:.5em 0;display:inline;width:7em}
+*islandora-compound-prev-next a {background-color:#62B2CE;color:#FFF;letter-spacing:1px;padding:0.5em 1em;text-align:center;margin:.8em 0;display:block;width:7em}
+.logouw {margin-right:.5em}
+.green{color:#9BAB10}.brown{color:#583200}.gold{color:#EACD15}

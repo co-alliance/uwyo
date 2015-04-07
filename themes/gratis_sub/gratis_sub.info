@@ -1,0 +1,49 @@
+name = gratis_sub sub-theme
+description = a gratis sub-theme gratis_sub
+core = 7.x
+engine = phptemplate
+base theme = gratis
+
+; CSS --------------------
+
+stylesheets[all][] = css/uwd7custom.css
+stylesheets[all][] = css/font-awesome.min.css
+
+; SCRIPTS --------------------
+
+scripts[] = js/jquery.flexslider-min.js
+
+; Regions --------------------
+regions[top_links]       = Top Links
+regions[thirdparty_menu]  = Main menu (third party menu systems)
+regions[preface_first]  = Preface first
+regions[preface_second] = Preface second
+regions[preface_third]  = Preface third
+regions[content_top]    = Content top
+regions[help]           = Help
+regions[sidebar_first]  = Sidebar First
+regions[sidebar_second]  = Sidebar Second
+regions[content]         = Content
+regions[node_block]         = Node Block
+regions[postscript_first]   = Postscript first
+regions[postscript_second]  = Postscript second
+regions[postscript_third]   = Postscript third
+regions[footer_first]   = Footer first
+regions[top_panel]  = Top Panel (special use)
+
+; Features --------------------
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = comment_user_picture
+features[] = favicon
+features[] = main_menu
+
+; Gratis default settings --------------
+
+settings[gratis_themelogo]  = 1
+settings[breadcrumbs]  = 1
+settings[gratis_viewport]  = 0
+settings[theme_color_palette]  = orange
+settings[gratis_localcss]  = 0
+settings[gratis_custom_css_location]  = 0
